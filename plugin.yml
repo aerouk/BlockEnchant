@@ -1,0 +1,8 @@
+name: BlockEnchant
+version: 2.0
+author: iEpix
+main: info.iaero.BlockEnchant
+commands:
+  blockenchant:
+    aliases: [be, blockenchanthelp]
+    description: Main help command for BlockEnchant
