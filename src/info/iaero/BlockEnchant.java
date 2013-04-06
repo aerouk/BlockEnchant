@@ -13,19 +13,26 @@ public class BlockEnchant extends JavaPlugin {
 	public String version = "2.0";
 	
 	public BlockEnchant() {
+		
 		plugin = this;
+		
 	}
 	
 	public void onEnable() {
+		
 		setupPlugin();
 		getServer().getLogger().info("BlockEnchant" + " has been enabled");
+		
 	}
 	
 	public void onDisable() {
+		
 		getServer().getLogger().info("BlockEnchant" + " has been disabled");
+		
 	}
 	
 	void setupPlugin() {
+		
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(new PlayerEnchantListener(), this);
 		
@@ -33,6 +40,7 @@ public class BlockEnchant extends JavaPlugin {
 		
 		getConfig().options().copyDefaults(true);
 		saveConfig();
+		
 	}
 
 }
