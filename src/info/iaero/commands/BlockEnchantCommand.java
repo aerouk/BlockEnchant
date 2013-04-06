@@ -29,7 +29,7 @@ public class BlockEnchantCommand implements CommandExecutor {
 		player.sendMessage(plugin.prefix + "§o§a/blockenchant §r- Shows this screen.");
 
 		return false;
-		
+
 	}
 
 }
