@@ -13,9 +13,7 @@ public class BlockEnchant extends JavaPlugin {
 	public String version = "2.0";
 	
 	public BlockEnchant() {
-
 		plugin = this;
-
 	}
 
 	public void onEnable() {
