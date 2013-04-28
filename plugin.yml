@@ -1,5 +1,5 @@
 name: BlockEnchant
-version: 2.0
+version: 2.0.1
 author: iEpix
 main: info.iaero.BlockEnchant
 commands:
