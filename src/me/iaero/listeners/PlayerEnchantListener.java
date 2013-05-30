@@ -1,6 +1,6 @@
-package info.iaero.listeners;
+package me.iaero.listeners;
 
-import info.iaero.BlockEnchant;
+import me.iaero.BlockEnchant;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
