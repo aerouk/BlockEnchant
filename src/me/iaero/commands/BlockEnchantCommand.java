@@ -31,7 +31,7 @@ public class BlockEnchantCommand implements CommandExecutor {
 			player.sendMessage(plugin.prefix + "§a§o/" + tag + " §r- Shows this screen.");
 			player.sendMessage(plugin.prefix + "§a§o/" + tag + " level §r- Shows the max level available.");
 
-		} else if(args.length == 1) {
+		} else if(args.length >= 1) {
 
 			if(args[0].equalsIgnoreCase("level")) {
 
@@ -42,10 +42,6 @@ public class BlockEnchantCommand implements CommandExecutor {
 				player.sendMessage(plugin.prefix + "§cInvalid arguments. §rUsage: §a§o/" + tag);
 
 			}
-
-		} else {
-
-			player.sendMessage(plugin.prefix + "Invalid arguments. Usage: /" + tag);
 
 		}
 
