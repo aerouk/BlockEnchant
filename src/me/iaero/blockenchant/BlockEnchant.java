@@ -1,7 +1,7 @@
-package me.iaero;
+package me.iaero.blockenchant;
 
-import me.iaero.commands.BlockEnchantCommand;
-import me.iaero.listeners.PlayerEnchantListener;
+import me.iaero.blockenchant.commands.BlockEnchantCommand;
+import me.iaero.blockenchant.listeners.PlayerEnchantListener;
 
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;

@@ -1,7 +1,7 @@
 name: BlockEnchant
 version: 2.0.3
 author: iEpix
-main: me.iaero.BlockEnchant
+main: me.iaero.blockenchant.BlockEnchant
 commands:
   blockenchant:
     aliases: [be, blockenchanthelp]

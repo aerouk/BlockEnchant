@@ -1,6 +1,6 @@
-package me.iaero.commands;
+package me.iaero.blockenchant.commands;
 
-import me.iaero.BlockEnchant;
+import me.iaero.blockenchant.BlockEnchant;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
