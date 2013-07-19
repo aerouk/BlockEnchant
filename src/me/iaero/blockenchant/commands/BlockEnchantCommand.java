@@ -22,7 +22,7 @@ public class BlockEnchantCommand implements CommandExecutor {
 
 		if(args.length == 0) {
 
-			player.sendMessage(plugin.prefix + "§6§lBlockEnchant §r| Help & FAQ");
+			player.sendMessage(plugin.prefix + "§6§lBlockEnchant v" + plugin.version + " §r| Help & FAQ");
 			player.sendMessage(plugin.prefix + "  §f§oWhat does your plugin do?");
 			player.sendMessage(plugin.prefix + "  §aIt stops you from enchanting over a specified level.");
 			player.sendMessage(plugin.prefix + "  §f§oHow can I get this plugin?");
@@ -35,6 +35,7 @@ public class BlockEnchantCommand implements CommandExecutor {
 
 			if(args[0].equalsIgnoreCase("level")) {
 
+				// Grabs the max level from the config file and tells the player the max level available.
 				player.sendMessage(plugin.prefix + "The max level available is: §a" + plugin.getConfig().getString("Level"));
 
 			} else {

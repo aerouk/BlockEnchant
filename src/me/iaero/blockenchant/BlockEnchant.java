@@ -10,7 +10,7 @@ public class BlockEnchant extends JavaPlugin {
 
 	public static BlockEnchant plugin;
 	public String prefix  = "§6BE §7> §r";
-	public String version = "2.0.3";
+	public String version = "2.0.4";
 
 	public BlockEnchant() {
 		plugin = this;
