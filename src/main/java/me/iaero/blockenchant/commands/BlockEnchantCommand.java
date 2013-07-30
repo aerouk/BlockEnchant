@@ -21,7 +21,8 @@ public class BlockEnchantCommand implements CommandExecutor {
                 "  §aYou can head over to http://bit.ly/BE-Bukkit",
                 "",
                 "§a§o/" + label + " §r- Shows this screen.",
-                "§a§o/" + label + " level §r- Shows the max level available."
+                "§a§o/" + label + " level §r- Shows the max level available.",
+                "§a§o/" + label + " set <level> §r- Sets the maximum available level."
             });
             return true;
         } else if (args.length == 1) {
@@ -35,21 +36,25 @@ public class BlockEnchantCommand implements CommandExecutor {
             return true;
         } else if (args.length >= 2) {
             if (args[0].equalsIgnoreCase("set")) {
-                try {
-                    int level = Integer.parseInt(args[1]);
-                    if (level <= 30) {
-                        BlockEnchant.instance().getConfig().set("Level", level);
-                        BlockEnchant.instance().saveConfig();
-                        BlockEnchant.setMaxLevel(level);
-                        sender.sendMessage("Maximum level changed to §a" + level);
-                    } else {
-                        sender.sendMessage("§4You can't enchant over level 30!");
+                if (sender.isOp() || sender.hasPermission("blockenchant.modify")) {
+                    try {
+                        int level = Integer.parseInt(args[1]);
+                        if (level <= 30) {
+                            BlockEnchant.instance().getConfig().set("Level", level);
+                            BlockEnchant.instance().saveConfig();
+                            BlockEnchant.setMaxLevel(level);
+                            sender.sendMessage("Maximum level changed to §a" + level);
+                        } else {
+                            sender.sendMessage("§4You can't enchant over level 30!");
+                        }
+                    } catch (Exception e) {
+                        sender.sendMessage("§4Incorrect command usage.");
                     }
-                } catch (Exception e) {
-                    sender.sendMessage("§4Incorrect command usage.");
+                } else {
+                    sender.sendMessage("Usage: §a/" + label + " <level, set>");
                 }
             } else {
-                sender.sendMessage("Usage: §a/" + label + " <level, set>");
+                sender.sendMessage("§4You don't have permission to do this.");
             }
             return true;
         }
