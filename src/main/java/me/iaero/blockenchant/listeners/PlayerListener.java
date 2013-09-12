@@ -16,9 +16,11 @@ public class PlayerListener implements Listener {
     @EventHandler (ignoreCancelled = true)
     public void onItemPrepare(PrepareItemEnchantEvent event) {
         Player player = event.getEnchanter();
+
         if (!player.isOp() || !player.hasPermission("blockenchant.enchant")) {
             for (int i = 0; i < event.getExpLevelCostsOffered().length; i++) {
                 int offered = event.getExpLevelCostsOffered()[i];
+
                 if (offered > BlockEnchant.maxLevel()) {
                     event.getExpLevelCostsOffered()[i] = BlockEnchant.maxLevel();
                 }

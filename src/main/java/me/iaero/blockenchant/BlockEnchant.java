@@ -31,10 +31,12 @@ public class BlockEnchant extends JavaPlugin {
 
     private void setupConfig() {
         File file = new File(getDataFolder(), "config.yml");
+
         if (!file.exists()) {
             getConfig().set("Level", 15);
             saveConfig();
         }
+
         max = getConfig().getInt("Level");
     }
 
