@@ -1,8 +1,10 @@
 package me.iaero.blockenchant;
 
 import java.io.File;
+
 import me.iaero.blockenchant.commands.BlockEnchantCommand;
 import me.iaero.blockenchant.listeners.PlayerListener;
+
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
