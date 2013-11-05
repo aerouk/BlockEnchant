@@ -42,8 +42,13 @@ public class BlockEnchant extends JavaPlugin
 
         if (!file.exists())
         {
-            getConfig().set("Level", 15);
-            saveConfig();
+            try
+            {
+                getConfig().set("Level", 15);
+                saveConfig();
+            }
+            catch(Exception e)
+            { }
         }
 
         max = getConfig().getInt("Level");

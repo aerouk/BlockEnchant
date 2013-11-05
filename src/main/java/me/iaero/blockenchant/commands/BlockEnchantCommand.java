@@ -2,9 +2,7 @@ package me.iaero.blockenchant.commands;
 
 import me.iaero.blockenchant.BlockEnchant;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
+import org.bukkit.command.*;
 
 public class BlockEnchantCommand implements CommandExecutor
 {
