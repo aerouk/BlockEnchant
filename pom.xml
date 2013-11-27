@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.iaero.blockenchant</groupId>
     <artifactId>BlockEnchant</artifactId>
-    <version>2.2.1</version>
+    <version>2.2.2</version>
     <name>BlockEnchant</name>
     <url>http://iaero.me/</url>
     <repositories>
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.6.4-R0.1-SNAPSHOT</version>
+            <version>1.6.4-R2.0</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>

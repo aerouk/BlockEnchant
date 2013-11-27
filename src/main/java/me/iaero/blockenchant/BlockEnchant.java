@@ -48,7 +48,8 @@ public class BlockEnchant extends JavaPlugin
                 saveConfig();
             }
             catch(Exception e)
-            { }
+            {
+            }
         }
 
         max = getConfig().getInt("Level");

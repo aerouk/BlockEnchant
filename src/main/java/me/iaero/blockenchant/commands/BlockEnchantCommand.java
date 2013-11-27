@@ -69,9 +69,9 @@ public class BlockEnchantCommand implements CommandExecutor
                             sender.sendMessage("§4You can't enchant over level 30!");
                         }
                     }
-                    catch (Exception e)
+                    catch (NumberFormatException e)
                     {
-                        sender.sendMessage("§4Incorrect command usage.");
+                        sender.sendMessage("§4Please use an integer (whole number) value for the maximum level.");
                     }
                 }
                 else
