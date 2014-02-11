@@ -6,4 +6,4 @@ notifications:
     channels:
       - "irc.esper.net#aero"
     template:
-      - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
+      - "Build #%{build_number} (https://github.com/%{repository}/commit/%{commit} : %{author}): %{message}"
