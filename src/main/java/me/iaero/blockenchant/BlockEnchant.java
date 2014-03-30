@@ -35,7 +35,7 @@ public class BlockEnchant extends JavaPlugin {
     private void setupConfig() {
         File file = new File(getDataFolder(), "config.yml");
 
-        if (!file.exists()) {
+        if ( ! file.exists()) {
             try {
                 getConfig().set("Level", 15);
                 saveConfig();
