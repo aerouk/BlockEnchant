@@ -4,67 +4,84 @@ import me.iaero.blockenchant.BlockEnchant;
 
 import org.bukkit.command.*;
 
-public class BlockEnchantCommand implements CommandExecutor {
-
-    public BlockEnchantCommand() {
+public class BlockEnchantCommand implements CommandExecutor
+{
+    public BlockEnchantCommand()
+    {
         BlockEnchant.instance().getCommand("blockenchant").setExecutor(this);
     }
 
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length == 0) {
-            sender.sendMessage(new String[] {
-                "§6§lBlockEnchant v" + BlockEnchant.instance().getDescription().getVersion() + " §r| Help & FAQ",
-                "  §oWhat does your plugin do?",
-                "  §aIt stops you from enchanting over a specified level.",
-                "  §oHow can I get this plugin?",
-                "  §aYou can head over to http://bit.ly/BE-Bukkit",
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
+    {
+        if (args.length == 0)
+        {
+            sender.sendMessage(new String[]
+            {
+                "ï¿½6ï¿½lBlockEnchant v" + BlockEnchant.instance().getDescription().getVersion() + " ï¿½r| Help & FAQ",
+                "  ï¿½oWhat does your plugin do?",
+                "  ï¿½aIt stops you from enchanting over a specified level.",
+                "  ï¿½oHow can I get this plugin?",
+                "  ï¿½aYou can head over to http://bit.ly/BE-Bukkit",
                 "",
-                "§a§o/" + label + " §r- Shows this screen.",
-                "§a§o/" + label + " level §r- Shows the max level available.",
-                "§a§o/" + label + " set <level> §r- Sets the maximum available level."
+                "ï¿½aï¿½o/" + label + " ï¿½r- Shows this screen.",
+                "ï¿½aï¿½o/" + label + " level ï¿½r- Shows the max level available.",
+                "ï¿½aï¿½o/" + label + " set <level> ï¿½r- Sets the maximum available level."
             });
 
             return true;
         }
-        else if (args.length == 1) {
-            if (args[0].equalsIgnoreCase("level")) {
-                sender.sendMessage("The maximum available level is: §a" + BlockEnchant.maxLevel());
+        else if (args.length == 1)
+        {
+            if (args[0].equalsIgnoreCase("level"))
+            {
+                sender.sendMessage("The maximum available level is: ï¿½a" + BlockEnchant.maxLevel());
             }
-            else if (args[0].equalsIgnoreCase("set")) {
-                sender.sendMessage("Usage: §a/" + label + " set <number>");
+            else if (args[0].equalsIgnoreCase("set"))
+            {
+                sender.sendMessage("Usage: ï¿½a/" + label + " set <number>");
             }
-            else {
-                sender.sendMessage("Usage: §a/" + label + " <level, set>");
+            else
+            {
+                sender.sendMessage("Usage: ï¿½a/" + label + " <level, set>");
             }
 
             return true;
         }
-        else if (args.length >= 2) {
-            if (args[0].equalsIgnoreCase("set")) {
-                if (sender.isOp() || sender.hasPermission("blockenchant.modify")) {
-                    try {
+        else if (args.length >= 2)
+        {
+            if (args[0].equalsIgnoreCase("set"))
+            {
+                if (sender.isOp() || sender.hasPermission("blockenchant.modify"))
+                {
+                    try
+                    {
                         int level = Integer.parseInt(args[1]);
 
-                        if (level <= 30) {
+                        if (level <= 30)
+                        {
                             BlockEnchant.instance().getConfig().set("Level", level);
                             BlockEnchant.instance().saveConfig();
                             BlockEnchant.setMaxLevel(level);
-                            sender.sendMessage("Maximum level changed to §a" + level);
+                            sender.sendMessage("Maximum level changed to ï¿½a" + level);
                         }
-                        else {
-                            sender.sendMessage("§4You can't enchant over level 30!");
+                        else
+                        {
+                            sender.sendMessage("ï¿½4You can't enchant over level 30!");
                         }
                     }
-                    catch (NumberFormatException e) {
-                        sender.sendMessage("§4Please use an integer (whole number) value for the maximum level.");
+                    catch (NumberFormatException e)
+                    {
+                        sender.sendMessage("ï¿½4Please use an integer (whole number) value for the maximum level.");
                     }
                 }
-                else {
-                    sender.sendMessage("Usage: §a/" + label + " <level, set>");
+                else
+                {
+                    sender.sendMessage("Usage: ï¿½a/" + label + " <level, set>");
                 }
             }
-            else {
-                sender.sendMessage("§4You don't have permission to do this.");
+            else
+            {
+                sender.sendMessage("ï¿½4You don't have permission to do this.");
             }
 
             return true;
@@ -72,5 +89,4 @@ public class BlockEnchantCommand implements CommandExecutor {
 
         return false;
     }
-
 }
