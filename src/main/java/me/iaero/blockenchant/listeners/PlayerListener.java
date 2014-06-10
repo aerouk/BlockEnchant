@@ -11,7 +11,7 @@ import org.bukkit.event.enchantment.PrepareItemEnchantEvent;
 public class PlayerListener implements Listener {
 
     public PlayerListener() {
-        Bukkit.getPluginManager().registerEvents(this, BlockEnchant.instance());
+        Bukkit.getPluginManager().registerEvents(this, BlockEnchant.getInstance());
     }
 
     @EventHandler (ignoreCancelled = true)

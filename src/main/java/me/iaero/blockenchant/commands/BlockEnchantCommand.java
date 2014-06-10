@@ -7,13 +7,13 @@ import org.bukkit.command.*;
 public class BlockEnchantCommand implements CommandExecutor {
 
     public BlockEnchantCommand() {
-        BlockEnchant.instance().getCommand("blockenchant").setExecutor(this);
+        BlockEnchant.getInstance().getCommand("blockenchant").setExecutor(this);
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
             sender.sendMessage(new String[] {
-                "�6�lBlockEnchant v" + BlockEnchant.instance().getDescription().getVersion() + " �r| Help & FAQ",
+                "�6�lBlockEnchant v" + BlockEnchant.getInstance().getDescription().getVersion() + " �r| Help & FAQ",
                 "  �oWhat does your plugin do?",
                 "  �aIt stops you from enchanting over a specified level.",
                 "  �oHow can I get this plugin?",
@@ -42,8 +42,8 @@ public class BlockEnchantCommand implements CommandExecutor {
                         int level = Integer.parseInt(args[1]);
 
                         if (level <= 30) {
-                            BlockEnchant.instance().getConfig().set("Level", level);
-                            BlockEnchant.instance().saveConfig();
+                            BlockEnchant.getInstance().getConfig().set("Level", level);
+                            BlockEnchant.getInstance().saveConfig();
                             BlockEnchant.setMaxLevel(level);
                             sender.sendMessage("Maximum level changed to �a" + level);
                         } else {
