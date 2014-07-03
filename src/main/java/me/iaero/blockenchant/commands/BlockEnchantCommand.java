@@ -12,26 +12,26 @@ public class BlockEnchantCommand implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage(new String[] {
-                "�6�lBlockEnchant v" + BlockEnchant.getInstance().getDescription().getVersion() + " �r| Help & FAQ",
-                "  �oWhat does your plugin do?",
-                "  �aIt stops you from enchanting over a specified level.",
-                "  �oHow can I get this plugin?",
-                "  �aYou can head over to http://bit.ly/BE-Bukkit",
+            BlockEnchant.getChat().sendColorMessage(sender, new String[] {
+                "&6&lBlockEnchant v" + BlockEnchant.getInstance().getDescription().getVersion() + " &r| Help & FAQ",
+                "  &oWhat does your plugin do?",
+                "  &aIt stops you from enchanting over a specified level.",
+                "  &oHow can I get this plugin?",
+                "  &aYou can head over to http://bit.ly/BE-Bukkit",
                 "",
-                "�a�o/" + label + " �r- Shows this screen.",
-                "�a�o/" + label + " level �r- Shows the max level available.",
-                "�a�o/" + label + " set <level> �r- Sets the maximum available level."
+                "&a&o/" + label + " &r- Shows this screen.",
+                "&a&o/" + label + " level &r- Shows the max level available.",
+                "&a&o/" + label + " set <level> &r- Sets the maximum available level."
             });
 
             return true;
         } else if (args.length == 1) {
             if (args[0].equalsIgnoreCase("level")) {
-                sender.sendMessage("The maximum available level is: �a" + BlockEnchant.maxLevel());
+                BlockEnchant.getChat().sendColorMessage(sender, "The maximum available level is: &a" + BlockEnchant.maxLevel());
             } else if (args[0].equalsIgnoreCase("set")) {
-                sender.sendMessage("Usage: �a/" + label + " set <number>");
+                BlockEnchant.getChat().sendColorMessage(sender, "Usage: &a/" + label + " set <number>");
             } else {
-                sender.sendMessage("Usage: �a/" + label + " <level, set>");
+                BlockEnchant.getChat().sendColorMessage(sender, "Usage: &a/" + label + " <level, set>");
             }
 
             return true;
@@ -45,18 +45,18 @@ public class BlockEnchantCommand implements CommandExecutor {
                             BlockEnchant.getInstance().getConfig().set("Level", level);
                             BlockEnchant.getInstance().saveConfig();
                             BlockEnchant.setMaxLevel(level);
-                            sender.sendMessage("Maximum level changed to �a" + level);
+                            BlockEnchant.getChat().sendColorMessage(sender, "Maximum level changed to &a" + level);
                         } else {
-                            sender.sendMessage("�4You can't enchant over level 30!");
+                            BlockEnchant.getChat().sendColorMessage(sender, "&4You can't enchant over level 30!");
                         }
                     } catch (NumberFormatException e) {
-                        sender.sendMessage("�4Please use an integer (whole number) value for the maximum level.");
+                        BlockEnchant.getChat().sendColorMessage(sender, "&4Please use an integer (whole number) value for the maximum level.");
                     }
                 } else {
-                    sender.sendMessage("Usage: �a/" + label + " <level, set>");
+                    BlockEnchant.getChat().sendColorMessage(sender, "Usage: &a/" + label + " <level, set>");
                 }
             } else {
-                sender.sendMessage("�4You don't have permission to do this.");
+                BlockEnchant.getChat().sendColorMessage(sender, "&4You don't have permission to do this.");
             }
 
             return true;

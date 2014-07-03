@@ -5,6 +5,7 @@ import java.io.File;
 import me.iaero.blockenchant.commands.BlockEnchantCommand;
 import me.iaero.blockenchant.listeners.PlayerListener;
 
+import me.iaero.blockenchant.utils.ChatHelper;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BlockEnchant extends JavaPlugin {
@@ -25,9 +26,14 @@ public class BlockEnchant extends JavaPlugin {
     }
 
     private static BlockEnchant blockenchant;
+    public static ChatHelper chat;
 
     public static BlockEnchant getInstance() {
         return blockenchant;
+    }
+
+    public static ChatHelper getChat() {
+        return chat;
     }
 
     private static int max;
