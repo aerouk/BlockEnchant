@@ -4,8 +4,8 @@ import java.io.File;
 
 import me.iaero.blockenchant.commands.BlockEnchantCommand;
 import me.iaero.blockenchant.listeners.PlayerListener;
-
 import me.iaero.blockenchant.utils.ChatHelper;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BlockEnchant extends JavaPlugin {
