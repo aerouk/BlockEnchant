@@ -2,7 +2,6 @@ package me.iaero.blockenchant.utils;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 public class ChatHelper {
 
