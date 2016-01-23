@@ -1,7 +1,7 @@
 name: BlockEnchant
 description: A plugin to block enchanting past a certain level to those without permission.
 main: me.iaero.blockenchant.BlockEnchant
-version: '2.2.4'
+version: ${project.version}
 
 commands: 
   blockenchant:
